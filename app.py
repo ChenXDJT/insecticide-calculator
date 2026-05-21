@@ -36,8 +36,8 @@ def main():
 
     with col1:
         st.subheader("🔧 设备参数")
-        flow_rate = st.number_input("喷雾机流量 *", min_value=0.0, value=2.5, step=0.1)
-        swath_width = st.number_input("喷幅 *", min_value=0.0, value=10, step=0.1)
+        flow_rate = st.number_input("喷雾机流量 *", min_value=0.0, value=7.5, step=0.1)
+        swath_width = st.number_input("喷幅 *", min_value=0.0, value=10.0, step=0.1)
         fog_height = st.number_input("雾层高度 *", min_value=0.01, value=2.0, step=0.1)
         length_unit = st.selectbox("长度单位", ["m", "cm"], index=0)
 
