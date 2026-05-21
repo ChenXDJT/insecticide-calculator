@@ -26,10 +26,10 @@ def main():
     # 侧边栏 - 全局单位偏好设置
     with st.sidebar:
         st.header("⚙️ 全局单位偏好")
-        flow_unit = st.selectbox("流量单位", ["ml/s", "ml/min", "L/min", "L/h"], index=1)
-        speed_unit = st.selectbox("步速单位", ["m/s", "m/min", "km/h"], index=1)
-        time_unit = st.selectbox("时长单位", ["s", "min", "h"], index=1)
-        vol_unit = st.selectbox("喷药量/原液量单位", ["ml", "L"], index=1)
+        flow_unit = st.selectbox("流量单位", ["ml/s", "ml/min", "L/min", "L/h"], index=0)
+        speed_unit = st.selectbox("步速单位", ["m/s", "m/min", "km/h"], index=0)
+        time_unit = st.selectbox("时长单位", ["s", "min", "h"], index=0)
+        vol_unit = st.selectbox("喷药量/原液量单位", ["ml", "L"], index=0)
 
     # 三列参数输入布局
     col1, col2, col3 = st.columns(3)
@@ -90,7 +90,7 @@ def main():
         else:
             dosage_value = st.number_input(
                 "制剂用药量数值 *",
-                min_value=0.0, value=5.0,
+                min_value=0.0, value=1.0,
                 step=0.1, format="%.4f"
             )
             dosage_unit = st.selectbox("用药量单位", ["ml/m³", "ml/m²"], index=0)
@@ -101,7 +101,7 @@ def main():
     if is_indoor:
         st.info("室内场景仅支持「已知稀释倍数」，不计算步速")
         known_type = "dilution"
-        known_dilution = st.number_input("稀释倍数数值 *", min_value=0.0, value=500.0, step=10.0)
+        known_dilution = st.number_input("稀释倍数数值 *", min_value=0.0, value=1.0, step=10.0)
         known_speed = None
     else:
         known_type = st.radio(
@@ -114,7 +114,7 @@ def main():
             known_speed = st.number_input("步速数值 *", min_value=0.0, value=1.0, step=0.1)
             known_dilution = None
         else:
-            known_dilution = st.number_input("稀释倍数数值 *", min_value=0.0, value=500.0, step=10.0)
+            known_dilution = st.number_input("稀释倍数数值 *", min_value=0.0, value=1.0, step=10.0)
             known_speed = None
 
     # 计算按钮
