@@ -26,7 +26,7 @@ def main():
     # 侧边栏 - 全局单位偏好设置
     with st.sidebar:
         st.header("⚙️ 全局单位偏好")
-        flow_unit = st.selectbox("流量单位", ["ml/s", "L/min", "L/h"], index=1)
+        flow_unit = st.selectbox("流量单位", ["ml/s", "ml/min", "L/min", "L/h"], index=1)
         speed_unit = st.selectbox("步速单位", ["m/s", "m/min", "km/h"], index=1)
         time_unit = st.selectbox("时长单位", ["s", "min", "h"], index=1)
         vol_unit = st.selectbox("喷药量/原液量单位", ["ml", "L"], index=1)
@@ -36,8 +36,8 @@ def main():
 
     with col1:
         st.subheader("🔧 设备参数")
-        flow_rate = st.number_input("喷雾机流量 *", min_value=0.0, value=2.5, step=0.1)
-        swath_width = st.number_input("喷幅 *", min_value=0.0, value=1.2, step=0.1)
+        flow_rate = st.number_input("喷雾机流量 *", min_value=0.0, value=7.5, step=0.1)
+        swath_width = st.number_input("喷幅 *", min_value=0.0, value=10.0, step=0.1)
         fog_height = st.number_input("雾层高度 *", min_value=0.01, value=2.0, step=0.1)
         length_unit = st.selectbox("长度单位", ["m", "cm"], index=0)
 
@@ -90,7 +90,7 @@ def main():
         else:
             dosage_value = st.number_input(
                 "制剂用药量数值 *",
-                min_value=0.0, value=5.0,
+                min_value=0.0, value=1.0,
                 step=0.1, format="%.4f"
             )
             dosage_unit = st.selectbox("用药量单位", ["ml/m³", "ml/m²"], index=0)
