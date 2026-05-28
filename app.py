@@ -26,10 +26,10 @@ def main():
     # 侧边栏 - 全局单位偏好设置
     with st.sidebar:
         st.header("⚙️ 全局单位偏好")
-        flow_unit = st.selectbox("流量单位", ["ml/s", "ml/min", "L/min", "L/h"], index=1)
-        speed_unit = st.selectbox("步速单位", ["m/s", "m/min", "km/h"], index=1)
-        time_unit = st.selectbox("时长单位", ["s", "min", "h"], index=1)
-        vol_unit = st.selectbox("喷药量/原液量单位", ["ml", "L"], index=1)
+        flow_unit = st.selectbox("流量单位", ["ml/s", "ml/min", "L/min", "L/h"], index=0)
+        speed_unit = st.selectbox("步速单位", ["m/s", "m/min", "km/h"], index=0)
+        time_unit = st.selectbox("时长单位", ["s", "min", "h"], index=0)
+        vol_unit = st.selectbox("喷药量/原液量单位", ["ml", "L"], index=0)
 
     # 三列参数输入布局
     col1, col2, col3 = st.columns(3)
