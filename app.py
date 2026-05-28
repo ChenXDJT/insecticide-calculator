@@ -104,13 +104,13 @@ def main():
         known_dilution = st.number_input("稀释倍数数值 *", min_value=0.0, value=1.0, step=10.0)
         known_speed = None
     else:
-        known_type = st.radio(
+        known_type_display = st.radio(
             "选择已知条件",
             ["已知步速", "已知稀释倍数"],
             index=0,
             horizontal=True
         )
-        if known_type == "已知步速":
+        if known_type == "speed":
             known_speed = st.number_input("步速数值 *", min_value=0.0, value=1.0, step=0.1)
             known_dilution = None
         else:
